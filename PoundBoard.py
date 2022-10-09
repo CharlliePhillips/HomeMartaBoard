@@ -26,7 +26,8 @@ def timeText(time):
         return time.split(" ")[0],"Minutes"
  
 root = tkinter.Tk()
-canvas = tkinter.Canvas(root, width=640, height=480)
+root.attributes('-fullscreen',True)
+canvas = tkinter.Canvas(root, width=800, height=480)
 canvas.grid(columnspan=4,rowspan=4)
 canvas.configure(bg="WHITE")
        

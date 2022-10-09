@@ -1,2 +1,2 @@
 This program requires the MARTA API, info found at https://www.itsmarta.com/app-developer-resources.aspx
-station is hard coded to Five Points because that is the primary station I get on the train at
+station is hard coded to Five Points because that is the primary station I get on the train at, this can be changed by just changing the trains variable initilization in the update function
