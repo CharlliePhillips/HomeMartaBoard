@@ -44,7 +44,8 @@ def update():
         label.grid_forget()
         label.grid_remove()
     root.configure(bg="WHITE")    
-
+    canvas.grid(columnspan=4,rowspan=4)
+    
     #start sorting array up by time until arrival
     for j in reversed(range(1,len(trains))):
         for i in range(j,len(trains)):
