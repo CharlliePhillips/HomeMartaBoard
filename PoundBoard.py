@@ -33,16 +33,17 @@ canvas.configure(bg="WHITE")
        
 def update():
     print("Updating...")
-    
-    #should clear the screen on each update to ensure that one train doesn't get printed twice with different times
-    blanks = []
-    for i in range(0,16):
-        blanks.append(tkinter.Label(root,text="",padx=0,pady=0,bg="WHITE",anchor='w'))
-        for j in range(0,4):
-            blanks[i].grid(columnspan=1,column=i,row=int(j/4),sticky='NSEW')
-            
+
     #pull current trains from the marta api at five points
+    trains = []
     trains = MARTA.get_trains(MARTA, station="Five Points Station")
+
+    #should clear the screen on each update to ensure that one train doesn't get printed twice with different times
+    for label in root.grid_slaves():
+        print("fuck")
+        label.grid_forget()
+        label.grid_remove()
+    root.configure(bg="WHITE")    
 
     #start sorting array up by time until arrival
     for j in reversed(range(1,len(trains))):
